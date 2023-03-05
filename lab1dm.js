@@ -48,7 +48,7 @@ function  union(elementsArray1, elementsArray2)
         resultArray[resultArray.length] = elementsArray1[i];
     for(let i=0; i<elementsArray2.length; i++)
         resultArray[resultArray.length] = elementsArray2[i];
-    return "Объединение массивов: " + resultArray.join(" ")
+    return "Unification: " + resultArray.join(" ")
 }
 
 
@@ -60,7 +60,7 @@ function  union(elementsArray1, elementsArray2)
  */
 function intersection(elementsArray1, elementsArray2)
 {
-  return "Пересечение массивов: " + elementsArray1.filter(value => elementsArray2.includes(value));
+  return "Intersection: " + elementsArray1.filter(value => elementsArray2.includes(value));
 }
 
 
@@ -72,7 +72,7 @@ function intersection(elementsArray1, elementsArray2)
  */
 function addition(elementsArray1, elementsArray2)
 {
-  return "Дополнение массивов A/B: " + elementsArray1.filter(value => !elementsArray2.includes(value));
+  return "Addition A/B: " + elementsArray1.filter(value => !elementsArray2.includes(value));
 }
 
 
@@ -84,7 +84,7 @@ function addition(elementsArray1, elementsArray2)
  */
 function addition2(elementsArray1, elementsArray2)
 {
-  return "Дополнение массивов B/A: " + elementsArray2.filter(value => !elementsArray1.includes(value));
+  return "Addition B/A: " + elementsArray2.filter(value => !elementsArray1.includes(value));
 }
 
 /**
@@ -98,7 +98,7 @@ function symmetricalDifference(elementsArray1,elementsArray2)
   const diff1 = elementsArray1.filter((elem) => !elementsArray2.includes(elem));
   const diff2 = elementsArray2.filter((elem) => !elementsArray1.includes(elem));
   
-  return "Симметрическая разность массивов: " + diff1.concat(diff2);
+  return "Symmetrical Difference: " + diff1.concat(diff2);
 }
 
 /**
@@ -115,15 +115,14 @@ function main()
     for(let i=0; i<mas1.length; i++)
     {
         if(!validateElement(mas1[i])) {
-            console.log("Ошибка в " + (i + 1) + " элементе")
-            strError += "Ошибка в " + (i + 1) + " элементе первого массива \n"
+            strError += "Error in the " + (i + 1) + " element of the first array \n"
         }
     }
 
     for(let i=0; i<mas2.length; i++)
     {
         if(!validateElement(mas2[i]))
-            strError += "Ошибка в " + (i+1) + " элементе второго массива"
+            strError += "Error in the " + (i+1) + " element of the second array"
     }
 
     if(strError == "")
@@ -131,7 +130,7 @@ function main()
         mas1 = removeDuplicates(mas1);
         mas2 = removeDuplicates2(mas2);
 
-        document.getElementById('result').innerHTML = "Результат рассчета:<br>"
+        document.getElementById('result').innerHTML = "Result:<br>"
         document.getElementById('result').innerHTML += union(mas1, mas2) + '<br>'
         document.getElementById('result').innerHTML += intersection(mas1, mas2) + '<br>'
         document.getElementById('result').innerHTML += addition(mas1, mas2) + '<br>'
