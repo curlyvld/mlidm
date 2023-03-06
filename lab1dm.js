@@ -115,7 +115,7 @@ function main()
     for(let i=0; i<mas1.length; i++)
     {
         if(!validateElement(mas1[i])) {
-            strError += "Error in the " + (i + 1) + " element of the first array \n"
+            strError += "Error in the " + (i + 1) + " element of the first array <br>"
         }
     }
 
