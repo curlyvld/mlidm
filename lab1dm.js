@@ -122,7 +122,7 @@ function main()
     for(let i=0; i<mas2.length; i++)
     {
         if(!validateElement(mas2[i]))
-            strError += "Error in the " + (i+1) + " element of the second array"
+            strError += "Error in the " + (i+1) + " element of the second array <br>"
     }
 
     if(strError == "")
